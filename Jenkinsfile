@@ -3,11 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        withMaven(maven: 'M3') {
-          sh '''mvn clean install
-'''
-        }
-
+        withMaven(maven: 'M3')
+        sh 'mvn clean install'
       }
     }
     stage('Results') {
